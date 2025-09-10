@@ -160,13 +160,14 @@
 export class RealtimeClient extends RealtimeEventHandler {
     /**
      * Create a new RealtimeClient instance
-     * @param {{url?: string, apiKey?: string, dangerouslyAllowAPIKeyInBrowser?: boolean, debug?: boolean}} [settings]
+     * @param {{url?: string, apiKey?: string, dangerouslyAllowAPIKeyInBrowser?: boolean, debug?: boolean, authorizationType?: "Bearer"|"api-key"}} [settings]
      */
-    constructor({ url, apiKey, dangerouslyAllowAPIKeyInBrowser, debug }?: {
+    constructor({ url, apiKey, dangerouslyAllowAPIKeyInBrowser, debug, authorizationType }?: {
         url?: string;
         apiKey?: string;
         dangerouslyAllowAPIKeyInBrowser?: boolean;
         debug?: boolean;
+        authorizationType?: "Bearer" | "api-key";
     });
     defaultSessionConfig: {
         modalities: string[];

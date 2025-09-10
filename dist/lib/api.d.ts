@@ -1,18 +1,20 @@
 export class RealtimeAPI extends RealtimeEventHandler {
     /**
      * Create a new RealtimeAPI instance
-     * @param {{url?: string, apiKey?: string, dangerouslyAllowAPIKeyInBrowser?: boolean, debug?: boolean}} [settings]
+     * @param {{url?: string, apiKey?: string, dangerouslyAllowAPIKeyInBrowser?: boolean, debug?: boolean, authorizationType?: "Bearer"|"api-key"}} [settings]
      * @returns {RealtimeAPI}
      */
-    constructor({ url, apiKey, dangerouslyAllowAPIKeyInBrowser, debug }?: {
+    constructor({ url, apiKey, dangerouslyAllowAPIKeyInBrowser, debug, authorizationType }?: {
         url?: string;
         apiKey?: string;
         dangerouslyAllowAPIKeyInBrowser?: boolean;
         debug?: boolean;
+        authorizationType?: "Bearer" | "api-key";
     });
     defaultUrl: string;
     url: string;
     apiKey: string;
+    authorizationType: "Bearer" | "api-key";
     debug: boolean;
     ws: any;
     /**
