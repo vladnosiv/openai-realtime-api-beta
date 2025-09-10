@@ -171,7 +171,7 @@ export class RealtimeClient extends RealtimeEventHandler {
     defaultSessionConfig: {
         modalities: string[];
         instructions: string;
-        voice: string;
+        voice: any;
         input_audio_format: string;
         output_audio_format: string;
         input_audio_transcription: any;
